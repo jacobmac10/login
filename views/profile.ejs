@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Profile</h1>
+
+    <img src="/image/<%= locals.user ? user.imageId : '' %> " alt="">
+
+    <form action="/profile/update" method="POST" enctype="multipart/form-data">
+        <!-- Cambiar foto de perfil -->
+        <label for="profilePicture">Profile Picture:</label>
+        <br>
+        <input type="file" name="profilePicture" id="profilePicture">
+        <br>
+    
+        <!-- Cambiar username -->
+        <label for="username">Username:</label>
+        <br>
+        <input type="text" name="username" value="<%= locals.user ? user.username : '' %>">
+        <br>
+        <button>Save</button>
+
+    </form>
+
+</body>
+</html>
